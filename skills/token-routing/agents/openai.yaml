@@ -1,0 +1,4 @@
+interface:
+  display_name: "Token Routing"
+  short_description: "Select RTK, pxpipe, or context-mode by task and model"
+  default_prompt: "Analyze this task and choose the safe token-saving route before executing."
