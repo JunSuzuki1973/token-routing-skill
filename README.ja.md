@@ -31,11 +31,14 @@ python <skill-installerへのパス>/install-skill-from-github.py `
 | GPT-6 Astraで8,000文字以上の静的文書を要約・分類 | pxpipe専用CLI経路 |
 | ファイル、API、ブラウザ、テストなど不定量出力 | context-mode |
 | コード編集・厳密な文字列・通常のデスクトップ対話 | context-mode |
-| GPT-5.6 Sol Highを含むSol、Terra、Luna、その他 | context-modeのみ |
+| GPT-5.6 Sol Highの対応CLI直接出力 | RTK（1回のGain実測で11.99%） |
+| GPT-5.6 Solの長い静的文書 | context-mode。pxpipeは技術的候補であり自動ONしない |
+| Solの他の推論設定、Terra、Luna、その他 | context-modeのみ |
 
-GPT-6 AstraでRTKとpxpipeには品質ゲート付きの個別A/B実測があります。Sol Highは
-測定基盤の子プロセス問題により有効なusageを取得できていないため、RTK／pxpipeを
-自動ONにしません。詳細は英語版READMEとSkill内の根拠資料を参照してください。
+GPT-6 AstraでRTKとpxpipeには品質ゲート付きの個別A/B実測があります。Sol Highの
+RTKは、公開Skillを読む1回のレビューでGainを確認しただけで、総モデル入力や
+品質ゲート付きA/Bの証明ではありません。pxpipeはSolが画像入力に対応するため
+技術的には候補ですが、Sol向けの自動ONは行いません。
 
 ## ライセンスと依存関係
 

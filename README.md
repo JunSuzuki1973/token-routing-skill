@@ -16,8 +16,8 @@ from pxpipe's image transformation.
 
 ## Install in Codex
 
-Ask Codex to install the skill from this repository, or use the bundled skill
-installer:
+Ask Codex to install `skills/token-routing` from this repository, or use the
+Codex skill-installer script already present on your machine:
 
 ```powershell
 python <path-to-skill-installer>/install-skill-from-github.py `
@@ -37,11 +37,13 @@ output, large documents, RTK, pxpipe, or context-mode.
 | GPT-6 Astra, static document summary/classification, 8,000+ characters | pxpipe via a dedicated CLI child process |
 | Files, API results, browser snapshots, tests, and unknown-size output | context-mode |
 | Code edits, exact identifiers, verbatim text, or interactive desktop work | context-mode |
-| GPT-5.6 Sol (including `high`), Terra, Luna, and other models | context-mode only |
+| GPT-5.6 Sol `high`, supported direct CLI output | RTK, with a one-run 11.99% Gain observation |
+| GPT-5.6 Sol static documents | context-mode; pxpipe remains a technical candidate, not an automatic route |
+| GPT-5.6 Sol other reasoning levels, Terra, Luna, and other models | context-mode only |
 
-The model default is deliberately conservative. GPT-5.6 Sol accepts image input
-and supports `high` reasoning, but this project does not yet have a
-quality-passing RTK or pxpipe end-to-end A/B measurement for Sol.
+The Sol High RTK route has one project-scoped command-output observation, not a
+full model-turn A/B. pxpipe has no Sol quality or savings result, so automatic
+selection remains disabled even though Sol accepts image input.
 
 ## Requirements and limits
 

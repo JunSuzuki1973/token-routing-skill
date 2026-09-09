@@ -29,6 +29,19 @@ Use these workload kinds:
 If a request contains multiple raw sources, classify and route each source
 separately. Tell the user the selected path briefly when it changes execution.
 
+The helper detects locally callable routes by default. An agent that already
+knows its active tools should pass them explicitly with `-AvailableRoutes`.
+If the selected fidelity-preserving route is unavailable, the result is `none`;
+do not silently substitute another compressor.
+Use `-DisableAutoDetect -AvailableRoutes @()` in tests that must represent an
+environment with no available routes.
+
+For GPT-5.6 Sol, use RTK automatically only for `high` reasoning and supported
+direct CLI output. That decision has one positive project-scoped Gain
+observation, not a full A/B benchmark. For long static Sol documents, pxpipe is
+only a technical candidate because Sol accepts image input; keep it off until a
+quality-gated Sol A/B result exists.
+
 ## Execution contract
 
 - `context-mode`: process the raw payload once in its sandbox and return only
